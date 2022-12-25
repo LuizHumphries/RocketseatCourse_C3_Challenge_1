@@ -37,7 +37,7 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
       ...post,
       first_publication_date: format(
         new Date(post.first_publication_date),
-        'dd-MMM-yyyy',
+        'dd MMM yyyy',
         {
           locale: ptBR,
         }
@@ -64,7 +64,7 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
         uid: post.uid,
         first_publication_date: format(
           new Date(post.first_publication_date),
-          'dd-MMM-yyyy',
+          'dd MMM yyyy',
           {
             locale: ptBR,
           }
@@ -89,7 +89,7 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
         <Header />
         <div className={styles.posts}>
           {posts.map(post => (
-            <Link href={`/post/${post.uid}`} key={post.uid} legacyBehavior>
+            <Link href={`/post/${post.uid}`} key={post.uid}>
               <a className={styles.post}>
                 <strong>{post.data.title}</strong>
                 <p>{post.data.subtitle}</p>
